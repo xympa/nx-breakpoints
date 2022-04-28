@@ -5,7 +5,8 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "typeorm:migrate": "TS_NODE_PROJECT=apps/api/tsconfig.app.json ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js --config api-utils/ormconfig-for-migrations.json migration:generate -n"
   },
   "private": true,
   "dependencies": {

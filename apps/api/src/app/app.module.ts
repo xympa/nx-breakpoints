@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from '../entities/User.entity';
+import { nova1651093886996 } from '../migrations/1651093886996-nova';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
@@ -16,6 +17,7 @@ import { AppService } from './app.service';
       entities: [User],
       synchronize: false,
       migrationsRun: true,
+      migrations: [nova1651093886996],
     }),
   ],
   controllers: [AppController],

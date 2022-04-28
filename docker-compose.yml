@@ -22,3 +22,14 @@ services:
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - ./docker/db/data:/var/lib/postgresql/data/pgdata
+  pg-admin:
+    image: dpage/pgadmin4
+    ports:
+      - '5557:80'
+    logging:
+      driver: none
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=t@t.com
+      - PGADMIN_DEFAULT_PASSWORD=t
+    volumes:
+      - ./docker/pgadmin/lib:/var/lib/pgadmin
